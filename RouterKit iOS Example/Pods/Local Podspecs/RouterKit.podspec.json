@@ -1,0 +1,22 @@
+{
+  "name": "RouterKit",
+  "version": "0.1.0",
+  "summary": "Simple but powerful router to help manage deep linking and navigation of your app's content.",
+  "description": "RouterKit is an elegant way to isolate and manage all the hairy navigation logic between the view controllers and deep links into your application.\nIt offers a clean way to define routes, pass data, manage transition logic that are often littered throughout view controllers and makes your code much more readable.",
+  "homepage": "https://github.com/kimyoutora/routerkit",
+  "license": "MIT",
+  "authors": {
+    "Kang Chen": "kangchen614@gmail.com",
+    "Chase Latta": "clatta@twitter.com"
+  },
+  "source": {
+    "git": "https://github.com/kimyoutora/routerkit.git",
+    "tag": "0.1.0"
+  },
+  "social_media_url": "https://twitter.com/routerkit",
+  "platforms": {
+    "ios": "8.0"
+  },
+  "requires_arc": true,
+  "source_files": "RouterKit/**/*"
+}

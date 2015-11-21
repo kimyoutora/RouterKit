@@ -1,0 +1,14 @@
+PODS:
+  - RouterKit (0.1.0)
+
+DEPENDENCIES:
+  - RouterKit (from `../RouterKit.podspec`)
+
+EXTERNAL SOURCES:
+  RouterKit:
+    :path: "../RouterKit.podspec"
+
+SPEC CHECKSUMS:
+  RouterKit: fe804645947fff629b2f258d4f49f6538915a070
+
+COCOAPODS: 0.39.0
