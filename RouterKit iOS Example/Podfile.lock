@@ -9,6 +9,6 @@ EXTERNAL SOURCES:
     :path: "../RouterKit.podspec"
 
 SPEC CHECKSUMS:
-  RouterKit: fe804645947fff629b2f258d4f49f6538915a070
+  RouterKit: 6daaf7cfc19b6145960a6f30a98e66da3342a8db
 
 COCOAPODS: 0.39.0

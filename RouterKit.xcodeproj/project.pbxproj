@@ -3,13 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 47;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3DD79BC21C00783A00D99F0E /* RouterKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DD79BC11C00783A00D99F0E /* RouterKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3DD79BC91C00783A00D99F0E /* RouterKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DD79BBE1C00783A00D99F0E /* RouterKit.framework */; };
 		3DD79BCE1C00783A00D99F0E /* RouterKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD79BCD1C00783A00D99F0E /* RouterKitTests.swift */; };
+		3DD79C0A1C01336E00D99F0E /* RouterKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD79C091C01336E00D99F0E /* RouterKit.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -24,11 +24,11 @@
 
 /* Begin PBXFileReference section */
 		3DD79BBE1C00783A00D99F0E /* RouterKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RouterKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		3DD79BC11C00783A00D99F0E /* RouterKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RouterKit.h; sourceTree = "<group>"; };
 		3DD79BC31C00783A00D99F0E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = RouterKit/Info.plist; sourceTree = "<group>"; };
 		3DD79BC81C00783A00D99F0E /* RouterKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RouterKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DD79BCD1C00783A00D99F0E /* RouterKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterKitTests.swift; sourceTree = "<group>"; };
 		3DD79BCF1C00783A00D99F0E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3DD79C091C01336E00D99F0E /* RouterKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouterKit.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,7 +72,7 @@
 		3DD79BC01C00783A00D99F0E /* RouterKit */ = {
 			isa = PBXGroup;
 			children = (
-				3DD79BC11C00783A00D99F0E /* RouterKit.h */,
+				3DD79C091C01336E00D99F0E /* RouterKit.swift */,
 			);
 			path = RouterKit;
 			sourceTree = "<group>";
@@ -101,7 +101,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3DD79BC21C00783A00D99F0E /* RouterKit.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -163,7 +162,7 @@
 				};
 			};
 			buildConfigurationList = 3DD79BB81C00783A00D99F0E /* Build configuration list for PBXProject "RouterKit" */;
-			compatibilityVersion = "Xcode 3.2";
+			compatibilityVersion = "Xcode 6.3";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -202,6 +201,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3DD79C0A1C01336E00D99F0E /* RouterKit.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -316,6 +316,7 @@
 		3DD79BD31C00783A00D99F0E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -326,12 +327,14 @@
 				PRODUCT_BUNDLE_IDENTIFIER = io.routerkit.RouterKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		3DD79BD41C00783A00D99F0E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
