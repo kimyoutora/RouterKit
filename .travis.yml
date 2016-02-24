@@ -13,3 +13,4 @@ script:
 
 - xctool -workspace 'RouterKit.xcworkspace' -scheme 'RouterKit' -sdk iphonesimulator CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO test -parallelize
 - pod lib lint
+after_success: coveralls
