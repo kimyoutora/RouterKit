@@ -1,6 +1,7 @@
 # RouterKit
 
 [![Build Status](https://travis-ci.org/kimyoutora/RouterKit.svg?branch=master)](https://travis-ci.org/kimyoutora/RouterKit)
+[![Coverage Status](https://coveralls.io/repos/github/kimyoutora/RouterKit/badge.svg?branch=master)](https://coveralls.io/github/kimyoutora/RouterKit?branch=master)
 [![Twitter](https://img.shields.io/badge/twitter-@kang-blue.svg?style=flat)](http://twitter.com/kang)
 [![License](https://img.shields.io/github/license/mashape/apistatus.svg)](LICENSE)
 
