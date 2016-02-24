@@ -84,8 +84,8 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
-  install_framework "Pods-RouterKit iOS Example/RouterKit.framework"
+  install_framework "$CONFIGURATION_BUILD_DIR/RouterKit/RouterKit.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
-  install_framework "Pods-RouterKit iOS Example/RouterKit.framework"
+  install_framework "$CONFIGURATION_BUILD_DIR/RouterKit/RouterKit.framework"
 fi

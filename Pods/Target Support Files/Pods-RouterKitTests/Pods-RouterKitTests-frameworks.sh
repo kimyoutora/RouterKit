@@ -84,10 +84,10 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
-  install_framework "Pods-RouterKitTests/Nimble.framework"
-  install_framework "Pods-RouterKitTests/Quick.framework"
+  install_framework "$CONFIGURATION_BUILD_DIR/Nimble/Nimble.framework"
+  install_framework "$CONFIGURATION_BUILD_DIR/Quick/Quick.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
-  install_framework "Pods-RouterKitTests/Nimble.framework"
-  install_framework "Pods-RouterKitTests/Quick.framework"
+  install_framework "$CONFIGURATION_BUILD_DIR/Nimble/Nimble.framework"
+  install_framework "$CONFIGURATION_BUILD_DIR/Quick/Quick.framework"
 fi
