@@ -2,13 +2,14 @@
 platform :ios, '8.0'
 use_frameworks!
 
-pod "RouterKit", :path => "../RouterKit.podspec"
+pod "RouterKit", :path => "../"
 
 target 'RouterKit iOS Example' do
 
 end
 
 target 'RouterKit iOS ExampleTests' do
+ pod 'RouterKit', :path => "../"
 
 end
 

@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.name             = "RouterKit"
   s.version          = "0.1.0"
-  s.summary          = "Simple but powerful router written in Swift to help manage deep linking and navigation of your app's content."
+  s.summary          = "Simple and powerful router written in Swift to help manage deep linking and navigation of your app's content."
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -16,9 +16,9 @@ It offers a clean way to define routes, pass data, manage transition logic that 
   s.homepage         = "https://github.com/kimyoutora/routerkit"
   # s.screenshots     = "www.example.com/screenshots_1", "www.example.com/screenshots_2"
   s.license          = 'MIT'
-  s.authors          = { "Kang Chen" => "kangchen614@gmail.com", "Chase Latta" => "clatta@twitter.com" }
+  s.authors          = { "Kang Chen" => "kangchen614@gmail.com" }
   s.source           = { :git => "https://github.com/kimyoutora/routerkit.git", :tag => s.version.to_s }
-  s.social_media_url = 'https://twitter.com/routerkit'
+  s.social_media_url = 'https://twitter.com/kang'
 
   s.platform     = :ios, '8.0'
   s.requires_arc = true

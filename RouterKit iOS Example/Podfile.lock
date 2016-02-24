@@ -2,13 +2,13 @@ PODS:
   - RouterKit (0.1.0)
 
 DEPENDENCIES:
-  - RouterKit (from `../RouterKit.podspec`)
+  - RouterKit (from `../`)
 
 EXTERNAL SOURCES:
   RouterKit:
-    :path: "../RouterKit.podspec"
+    :path: "../"
 
 SPEC CHECKSUMS:
-  RouterKit: 6daaf7cfc19b6145960a6f30a98e66da3342a8db
+  RouterKit: 89337cf05f5929c73cc39fd78f406c1f3a0fa7e2
 
 COCOAPODS: 0.39.0
