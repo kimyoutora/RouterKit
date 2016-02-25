@@ -10,7 +10,8 @@ install:
 - gem install slather
 script:
 - set -o pipefail
-- xctool -scheme 'RouterKit' -sdk iphonesimulator CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO test -parallelize
+- xctool -scheme 'RouterKit' -sdk iphonesimulator CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO GCC_INSTRUMENT_PROGRAM_FLOW_ARCS=YES 
+  GCC_GENERATE_TEST_COVERAGE_FILES=YES test -parallelize
 after_success:
 - pod lib lint --quick # ensure podspec is still valid
 - slather
