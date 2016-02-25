@@ -13,7 +13,7 @@ import Foundation
  */
 public protocol AppLinkType {
     /// An object containing information from the navigating app.
-    var extras: [String: AnyObject] { get }
+    var extras: [String: String] { get }
 
     /// String containing the URL being navigated to.
     var targetURL: String { get }
