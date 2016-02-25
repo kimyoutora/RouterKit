@@ -11,4 +11,4 @@ script:
 - xctool -scheme 'RouterKit' -sdk iphonesimulator CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO test -parallelize
 after_success:
 - pod lib lint --quick # ensure podspec is still valid
-- coveralls
+- slather

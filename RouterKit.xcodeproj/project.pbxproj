@@ -78,11 +78,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		3DD79BB41C00783A00D99F0E = {
+		3D9886BA1C7E6DF60036E5A1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				3D9886B61C7E2BCE0036E5A1 /* Nimble.framework */,
 				3D9886B71C7E2BCE0036E5A1 /* Quick.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3DD79BB41C00783A00D99F0E = {
+			isa = PBXGroup;
+			children = (
+				3D9886BA1C7E6DF60036E5A1 /* Frameworks */,
 				3DD79BBF1C00783A00D99F0E /* Products */,
 				3DD79BC01C00783A00D99F0E /* RouterKit */,
 				3DD79BCC1C00783A00D99F0E /* RouterKitTests */,
