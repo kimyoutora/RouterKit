@@ -49,7 +49,7 @@ class RequestTests: QuickSpec {
                     expect(appLinkRequest.userAgent).to(equal(Optional.Some("Bolts iOS 1.0.0")))
                 }
 
-                fit("returns correct referrer app link") {
+                it("returns correct referrer app link") {
                     let refererAppLink = appLinkRequest.refererAppLink
                     expect(refererAppLink?.appName).to(equal("Example App"))
                     expect(refererAppLink?.url).to(equal("example://docs"))
