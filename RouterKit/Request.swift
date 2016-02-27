@@ -114,12 +114,17 @@ public struct Request: AppLinkType, RequestType {
     // url.absoluteString does not behave as you would expect for custom schemes so we need to normalize it
     private static func targetURLFromNSURL(url: NSURL) -> String {
         let schemeSuffix = url.scheme.isEmpty ? "" : ":/"
-        let combinedPath = self.normalizedPath(url)
+        let combinedPath = self.normalizedPath(url) // always returns with / prefix
         return "\(url.scheme)\(schemeSuffix)\(combinedPath)"
     }
 
     /**
      Normalized path from the specified URL. This mainly handles different semantics that `NSURL` depending on whether url.scheme is present.
+     
+     Examples:
+     scheme://foo/bar   -> /foo/bar
+     /foo               -> /foo
+     /foo/bar           -> /foo/bar
 
      - parameter url: URL to normalize.
 
@@ -128,8 +133,12 @@ public struct Request: AppLinkType, RequestType {
     private static func normalizedPath(url: NSURL) -> String {
         // URL parsing in NSURL doesn't handle all combinations of scheme and with or without path.
         // For our purposes, everything after scheme:// and / for schemeless is considered the path
-        let normalizedPath = [url.host ?? "", url.path ?? ""].filter { !$0.isEmpty }.joinWithSeparator("/")
-        return "/\(normalizedPath)"
+        switch (url.host, url.path) {
+        case (nil, nil): return "/"
+        case (.Some(let host), nil): return "/\(host)"
+        case (nil, .Some(let path)): return path
+        case let (.Some(host), .Some(path)): return "/\(host)\(path)"
+        }
     }
 
     private static func normalizedURLParams(encodedQuery: String) -> [String: AnyObject] {
