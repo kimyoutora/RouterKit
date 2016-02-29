@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3D15C4691C7D9D7B009E76A0 /* RequestSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D15C4681C7D9D7B009E76A0 /* RequestSpec.swift */; };
+		3D60ED151C819847006F26C3 /* TreeRoutingTableSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D60ED141C819847006F26C3 /* TreeRoutingTableSpec.swift */; };
 		3D7115431C7D9CB000AE799E /* AppLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D7115391C7D9CB000AE799E /* AppLink.swift */; };
 		3D7115441C7D9CB000AE799E /* ComponentNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D71153A1C7D9CB000AE799E /* ComponentNode.swift */; };
 		3D7115451C7D9CB000AE799E /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D71153B1C7D9CB000AE799E /* Filter.swift */; };
@@ -37,6 +38,7 @@
 
 /* Begin PBXFileReference section */
 		3D15C4681C7D9D7B009E76A0 /* RequestSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestSpec.swift; sourceTree = "<group>"; };
+		3D60ED141C819847006F26C3 /* TreeRoutingTableSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TreeRoutingTableSpec.swift; sourceTree = "<group>"; };
 		3D7115391C7D9CB000AE799E /* AppLink.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppLink.swift; sourceTree = "<group>"; };
 		3D71153A1C7D9CB000AE799E /* ComponentNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComponentNode.swift; sourceTree = "<group>"; };
 		3D71153B1C7D9CB000AE799E /* Filter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Filter.swift; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 				3DD79BCF1C00783A00D99F0E /* Info.plist */,
 				3D15C4681C7D9D7B009E76A0 /* RequestSpec.swift */,
 				3DD79BCD1C00783A00D99F0E /* RouterKitTests.swift */,
+				3D60ED141C819847006F26C3 /* TreeRoutingTableSpec.swift */,
 			);
 			path = RouterKitTests;
 			sourceTree = "<group>";
@@ -289,6 +292,7 @@
 			files = (
 				3DD79BCE1C00783A00D99F0E /* RouterKitTests.swift in Sources */,
 				3D15C4691C7D9D7B009E76A0 /* RequestSpec.swift in Sources */,
+				3D60ED151C819847006F26C3 /* TreeRoutingTableSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

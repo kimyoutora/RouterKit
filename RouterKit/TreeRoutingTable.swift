@@ -12,7 +12,7 @@ import Foundation
  *  An efficient router that looks up registered routes by matching the
  *  individual path components using tree traversal.
  */
-public struct TreeRoutingTable: RoutingTableType {
+public class TreeRoutingTable: RoutingTableType {
     private static let DefaultScheme = ""
     private var routes = [ComponentNode]()
 
@@ -32,10 +32,10 @@ public struct TreeRoutingTable: RoutingTableType {
      - parameter path:    The path of the route.
      - parameter handler: Handler to invoke when an incoming request matches the scheme and route.
      */
-    public mutating func addRoute(scheme: String?, path: String, handler: RequestHandler) {
+    public func addRoute(scheme: String?, path: String, handler: RequestHandler) {
         let schemeToSetUp = scheme ?? TreeRoutingTable.DefaultScheme
         setUpRoutesTableIfNecessary(scheme: schemeToSetUp)
-        guard let schemeNode = getSchemeNode(schemeToSetUp) else {
+        guard var schemeNode = getSchemeNode(schemeToSetUp) else {
             print("Routing table for scheme was not set up properly.")
             return
         }
@@ -47,11 +47,11 @@ public struct TreeRoutingTable: RoutingTableType {
 
 // MARK: Internal - Route Management
 extension TreeRoutingTable {
-    private mutating func setUpRoutesTableIfNecessary(scheme scheme: String) {
+    private func setUpRoutesTableIfNecessary(scheme scheme: String) {
         let schemeIsNotInitialized = getSchemeNode(scheme) == nil
         if schemeIsNotInitialized {
             let schemeComponent = SchemeRouteComponent(rawComponent: scheme)
-            let schemeNode = ComponentNode(component: schemeComponent, handler: .None, children: [])
+            let schemeNode = ComponentNode(component: schemeComponent)
             self.routes.append(schemeNode)
         }
     }
@@ -71,15 +71,15 @@ extension TreeRoutingTable {
      - parameter path:    Tokenized path component matchers.
      - parameter handler: Handler to invoke when a request matches the route being added.
      */
-    private mutating func addRoute(var pathNode: ComponentNode, path: [RouteComponentType], handler: RequestHandler) {
+    private func addRoute(node: ComponentNode, path: [RouteComponentType], handler: RequestHandler) {
         if path.count > 0 {
             let nextPathComponent = path.first!
-            let matchingChildNode = matchingPathComponent(pathComponent: nextPathComponent, inChildNodes: pathNode.children)
-            if pathNode.isLeaf || matchingChildNode == nil {
-                let nextPathNode = ComponentNode(component: nextPathComponent, handler: handler, children: [])
+            let matchingChildNode = matchingPathComponent(pathComponent: nextPathComponent, inChildNodes: node.children)
+            if node.isLeaf || matchingChildNode == nil {
+                let nextNode = ComponentNode(component: nextPathComponent, handler: handler)
                 let restOfPath = Array(path.dropFirst())
-                addRoute(nextPathNode, path: restOfPath, handler: handler)
-                pathNode.children.append(nextPathNode)
+                node.addChild(nextNode)
+                addRoute(nextNode, path: restOfPath, handler: handler)
             } else {
                 let restOfPath = Array(path.dropFirst())
                 addRoute(matchingChildNode!, path: restOfPath, handler: handler)
@@ -99,7 +99,7 @@ extension TreeRoutingTable {
         //                          -> yes -> check if any of the children matches rest of tokens
         // no -> just return nil
         var pathTokens = path.tokenizePath()
-        var nodesToCheck = [schemeNode]
+        var nodesToCheck = schemeNode.children
         var extractedParams = [String: String]()
         var possiblyMatchingHandler: RequestHandler? = nil
 
@@ -111,9 +111,9 @@ extension TreeRoutingTable {
 
                 // save the extracted parameters so we can return all of them at the end
                 let params = node.component.extractParameters(token)
-                params.forEach({ (key, value) in
+                params.forEach { (key, value) in
                     extractedParams[key] = value
-                })
+                }
 
                 // we might've looked at all the nodes and path tokens so save this
                 // handler in case it's the one we want to return
