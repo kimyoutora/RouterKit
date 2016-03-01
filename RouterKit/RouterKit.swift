@@ -10,11 +10,11 @@ import Foundation
 /**
  *  Entry point for registering routes and handling of incoming URL requests.
  */
-public struct Router {
+public class Router {
     private var routingTable: RoutingTableType
 
     // MARK: Init
-    public init() {
+    public convenience init() {
         self.init(routingTable: TreeRoutingTable())
     }
 
@@ -30,7 +30,7 @@ public struct Router {
     - parameter handlerClass: The handler you want to instantiate to handle the URL request.
     - parameter route:        The route to register.
     */
-    public mutating func registerClass<T where T: RequestHandling>(handlerClass: T.Type, forRoute route: Route) {
+    public func registerClass<T where T: RequestHandling>(handlerClass: T.Type, forRoute route: Route) {
         let handler = { (request: Request) -> Response in
             handlerClass.init().process(request)
         }
@@ -45,7 +45,7 @@ public struct Router {
      - parameter handler: Block to invoke when there's a routing request to the mapped path.
      - returns: Boolean indicating whether the route was successfully registered.
      */
-    public mutating func addRoute(route: Route, handler: RequestHandler) -> Bool {
+    public func addRoute(route: Route, handler: RequestHandler) -> Bool {
         switch route.extractSchemeAndPath() {
         case let (scheme, path) where path.lengthOfBytesUsingEncoding(NSUTF8StringEncoding) > 0:
             self.routingTable.addRoute(scheme, path: path, handler: handler)

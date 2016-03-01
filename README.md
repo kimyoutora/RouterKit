@@ -10,12 +10,12 @@ Simple but powerful router in Swift to help manage deep linking and navigation o
 ## Usage
 
 ```swift
-var router: Router!
+let router: Router!
 
 func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-  self.router = Router(userAgent: self.appName)
+  self.router = Router()
   router.addRoute("/users/:me/profile") { (request) -> Response
-    print(request.extras)
+    print(request.parameters)
     return Response(url: request.rawURL, status: .OK)
   }
 
